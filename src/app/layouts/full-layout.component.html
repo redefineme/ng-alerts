@@ -1,0 +1,45 @@
+<header class="app-header navbar">
+  <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">&#9776;</button>
+  <a class="navbar-brand" href="#"></a>
+
+  <ul class="nav navbar-nav hidden-md-down">
+    <li class="nav-item">
+      <a class="nav-link navbar-toggler sidebar-toggler" href="https://www.techspacehub.com/">&#9776;</a>
+    </li>
+    <li class="nav-item px-1">
+      <a class="nav-link" href="https://www.techspacehub.com/">TechSpaceHub</a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item hidden-md-down">
+      <a class="nav-link" href="#"><i class="icon-social-github"></i></a>
+    </li>
+    <li class="nav-item hidden-md-down">
+      <a class="nav-link" href="#"><i class="icon-cloud-download"></i></a>
+    </li>
+  </ul>
+</header>
+
+<div class="app-body">
+  <div class="sidebar">
+    <nav class="sidebar-nav">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/alerts']"><i class="icon-exclamation"></i> Alerts <span class="badge badge-info">NEW</span></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <main class="main">
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div><!-- /.conainer-fluid -->
+  </main>
+</div>
+
+<footer class="app-footer">
+  <a href="https://www.techspacehub.com/">TechSpaceHub</a> &copy; 2017 Redefineme.
+  <span class="float-right">Powered by <a href="https://www.techspacehub.com/">Redefineme</a></span>
+</footer>
