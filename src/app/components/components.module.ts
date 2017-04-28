@@ -5,6 +5,7 @@ import {NgModule} from "@angular/core";
 import { CommonModule} from "@angular/common";
 import { NgAlertsComponent} from "./ngAlerts/ng-alerts.component";
 import { AlertComponent} from "./ngAlerts/alert/alert.component";
+import { AlertModel} from './ngAlerts/services/alert.model'
 @NgModule({
   imports:[
     CommonModule
@@ -16,6 +17,9 @@ import { AlertComponent} from "./ngAlerts/alert/alert.component";
   declarations:[
     NgAlertsComponent,
     AlertComponent
+  ],
+  providers:[
+    AlertModel
   ]
 })
 

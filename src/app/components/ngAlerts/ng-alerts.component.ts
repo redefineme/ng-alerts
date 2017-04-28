@@ -1,12 +1,13 @@
 /**
  * Created by iZel on 4/27/17.
  */
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit,ViewEncapsulation} from "@angular/core";
 import { NgAlertsService} from './services/ngAlertsService'
 @Component({
-  selector:'ng-alerts',
+  selector:'[ng-alerts]',
   templateUrl:'./ng-alerts.component.html',
-  styleUrls:['./ng-alerts.css']
+  styleUrls:['./ng-alerts.css'],
+  encapsulation:ViewEncapsulation.None
 })
 
 export class NgAlertsComponent implements OnInit{
@@ -35,3 +36,4 @@ export class NgAlertsComponent implements OnInit{
     }
   }
 }
+

@@ -7,36 +7,51 @@
 /*}*/
 
 /*:host >>>.right-top-notify{*/
-  /*right: 0px;*/
-  /*top:0px;*/
+/*right: 0px;*/
+/*top:0px;*/
 /*}*/
 /*:host >>>.right-bottom-notify{*/
-  /*right: 0px;*/
-  /*bottom: 0px;*/
+/*right: 0px;*/
+/*bottom: 0px;*/
 /*}*/
 /*:host >>>.left-top-notify{*/
-  /*left: 0px;*/
-  /*top:0px;*/
+/*left: 0px;*/
+/*top:0px;*/
 /*}*/
 /*:host >>>.left-bottom-notify{*/
-  /*left: 0px;*/
-  /*bottom:0px;*/
+/*left: 0px;*/
+/*bottom:0px;*/
 /*}*/
 /*:host >>>.default-size-notify{*/
-  /*width: 150px !important;*/
+/*width: 150px !important;*/
 /*}*/
 
 /*:host >>>.full-size-notify{*/
-  /*width: 100%;*/
+/*width: 100%;*/
 /*}*/
 
-.dock-header{
-  position: absolute;
-  text-align: center;
+:host{
   width: 100%;
+}
+
+.dock-header{
+  position: fixed;
+  text-align: center;
+  width: 200px;
+  bottom:0px;
+  right: 0px;
   opacity: 0.7;
   z-index: 1500;
 }
+
+
+.dock-header > div > .right-top-notify{
+  margin-bottom: 0px !important;
+  animation: intro 3s;
+  -webkit-animation: intro 3s;
+  -moz-animation: intro 3s;
+}
+
 
 :host >>> .alert {
   margin-bottom: 0px !important;
