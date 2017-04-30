@@ -25,17 +25,22 @@ export class NgAlertsComponent implements OnInit{
 
   ngOnInit(){
     this.alertsService.eventAlerts.subscribe((alert)=>{
-      if(this._countsAlerts < this._limit){
-        this.alerts.unshift(alert);
-        this._countsAlerts++;
-      }else{
-        this.queue.push(alert);
+      if(alert){
+        if(this._countsAlerts < this._limit){
+          this.alerts.unshift(alert);
+          this._countsAlerts++;
+        }else{
+          this.queue.push(alert);
+        }
       }
     });
-    this.options = this.alertsService.getOptions();
+    // this.options = this.alertsService.getOptions();
 
     this.alertsService.eventOptions.subscribe((options:AlertModel)=>{
-      this.options=options;
+      if(options){
+        console.log(options)
+        this.options=options;
+      }
     })
   }
 

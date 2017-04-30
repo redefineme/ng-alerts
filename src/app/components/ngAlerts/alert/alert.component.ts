@@ -17,6 +17,8 @@ export class AlertComponent implements OnInit{
   constructor(){}
 
   ngOnInit(){
+
+    console.log(this.alert)
     setTimeout(()=>{
       this.dissmiss=false;
       this.onClosed.emit();
