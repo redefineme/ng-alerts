@@ -1,23 +1,63 @@
 <div class="animated fadeIn">
   <div class="row">
-    <div class="col-sm-6 col-md-4">
+
+    <div class="col-sm-12 col-md-6">
       <div class="card">
         <div class="card-header">
-         Card title
+          Type Alert
         </div>
         <div class="card-block">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+          <div class="form-group">
+            <label >Messages</label>
+            <input type="text" class="form-control" placeholder="Messages" [(ngModel)]="msg">
+          </div>
+          <button type="button" class="btn btn-success" (click)="alert('success')">Success</button>
+          <button type="button" class="btn btn-warning" (click)="alert('warning')">Warning</button>
+          <button type="button" class="btn btn-info" (click)="alert('info')">Info</button>
+          <button type="button" class="btn btn-danger" (click)="alert('danger')">Danger</button>
         </div>
       </div>
-    </div><!--/.col-->
-    <div class="col-sm-6 col-md-4">
+    </div>
+
+    <div class="col-sm-12 col-md-6">
       <div class="card">
-        <div class="card-block">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+        <div class="card-header">
+          TimeOut Alert
         </div>
-      <div class="card-footer">Card footer</div>
-        <button type="button" class="btn btn-secondary" (click)="addAlert()">Add Alert</button>
+        <div class="card-block">
+          <div class="form-group">
+            <label >TimeOut:   {{timeout/1000}} seconds</label>
+            <input type="range" class="form-control" orient="horizontal" min="1000" max="5000" step="1000" [(ngModel)]="timeout"/>
+          </div>
+        </div>
       </div>
-    </div><!--/.col-->
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-header">
+         Direction Alert
+        </div>
+        <div class="card-block">
+          <button type="button" class="btn btn-secondary" (click)="place('right-top-alert')">Right Top</button>
+          <button type="button" class="btn btn-secondary" (click)="place('left-top-alert')">Left Top</button>
+          <button type="button" class="btn btn-secondary" (click)="place('right-bottom-alert')">Right Bottom</button>
+          <button type="button" class="btn btn-secondary" (click)="place('left-bottom-alert')">Left Bottom</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Size Alert
+        </div>
+        <div class="card-block">
+          <button type="button" class="btn btn-secondary" (click)="size('default')">Defaults</button>
+          <button type="button" class="btn btn-secondary" (click)="size('full')">Full</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

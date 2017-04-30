@@ -3,6 +3,7 @@
  */
 import {Component, OnInit,ViewEncapsulation} from "@angular/core";
 import { NgAlertsService} from './services/ngAlertsService'
+import { AlertModel} from './services/alert.model'
 @Component({
   selector:'[ng-alerts]',
   templateUrl:'./ng-alerts.component.html',
@@ -11,11 +12,16 @@ import { NgAlertsService} from './services/ngAlertsService'
 })
 
 export class NgAlertsComponent implements OnInit{
-  constructor(private alertsService:NgAlertsService){}
+
+  options:any={};
   alerts:any=[];
   queue:any=[];
   private _limit=5;
   private _countsAlerts=0;
+
+  constructor(private alertsService:NgAlertsService){
+    // this.options = this.alertsService.getOptions();
+  }
 
   ngOnInit(){
     this.alertsService.eventAlerts.subscribe((alert)=>{
@@ -25,6 +31,11 @@ export class NgAlertsComponent implements OnInit{
       }else{
         this.queue.push(alert);
       }
+    });
+    this.options = this.alertsService.getOptions();
+
+    this.alertsService.eventOptions.subscribe((options:AlertModel)=>{
+      this.options=options;
     })
   }
 

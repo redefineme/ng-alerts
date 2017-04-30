@@ -9,16 +9,40 @@ import { NgAlertsService} from '../components/ngAlerts/services/ngAlertsService'
 })
 
 export class AlertsComponents {
+
+  msg:string='Messages';
+  type:string='success';
+  timeout:number=3000;
+
   constructor(private ngAlerts:NgAlertsService){
-    this.ngAlerts.pushAlert({
-      msg:'test',
-    })
+    this.addAlert()
   }
 
 
   addAlert(){
     this.ngAlerts.pushAlert({
-      msg:Date.now(),
+      msg:this.msg,
+      type:this.type,
+      timeout:this.timeout
     })
+  }
+
+  alert(type){
+    this.type=type;
+    this.addAlert();
+  }
+
+  place(place){
+    this.ngAlerts.setOptions({
+      place:place
+    });
+    this.addAlert();
+  }
+
+  size(size){
+    this.ngAlerts.setOptions({
+      size:size
+    });
+    this.addAlert();
   }
 }

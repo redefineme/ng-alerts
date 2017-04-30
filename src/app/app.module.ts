@@ -13,9 +13,20 @@ import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 
 import { ComponentsModule} from "./components/components.module";
-// import { AlertsComponents} from "./components/components.module";
 
 import { NgAlertsService } from "./components/ngAlerts/services/ngAlertsService"
+
+
+export function AlertConfig(){
+  return new NgAlertsService(
+    {
+      type:'success',
+      timeout: 3000,
+      place:'right-top-alert',
+      size:'default'
+    }
+  )
+}
 
 @NgModule({
   imports: [
@@ -34,7 +45,13 @@ import { NgAlertsService } from "./components/ngAlerts/services/ngAlertsService"
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   },
-    NgAlertsService
+  [
+    {
+      provide: NgAlertsService,
+      useFactory: AlertConfig
+    }
+  ]
+    // NgAlertsService
   ],
   bootstrap: [ AppComponent ]
 })

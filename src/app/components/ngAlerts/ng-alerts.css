@@ -1,34 +1,3 @@
-/*.dock-header{*/
-/*position: absolute;*/
-/*top:0px;*/
-/*width: 100%;*/
-/*text-align: center;*/
-/*opacity: 0.7;*/
-/*}*/
-
-/*:host >>>.right-top-notify{*/
-/*right: 0px;*/
-/*top:0px;*/
-/*}*/
-/*:host >>>.right-bottom-notify{*/
-/*right: 0px;*/
-/*bottom: 0px;*/
-/*}*/
-/*:host >>>.left-top-notify{*/
-/*left: 0px;*/
-/*top:0px;*/
-/*}*/
-/*:host >>>.left-bottom-notify{*/
-/*left: 0px;*/
-/*bottom:0px;*/
-/*}*/
-/*:host >>>.default-size-notify{*/
-/*width: 150px !important;*/
-/*}*/
-
-/*:host >>>.full-size-notify{*/
-/*width: 100%;*/
-/*}*/
 
 :host{
   width: 100%;
@@ -37,43 +6,54 @@
 .dock-header{
   position: fixed;
   text-align: center;
-  width: 200px;
-  bottom:0px;
-  right: 0px;
-  opacity: 0.7;
+  opacity: 0.9;
   z-index: 1500;
 }
 
+.dock-size-default{
+  width: 200px;
+}
 
-.dock-header > div > .right-top-notify{
-  margin-bottom: 0px !important;
+.dock-size-full{
+  width: 100%;
+}
+
+
+.right-top-alert{
+  right: 0px;
+  top:0px;
+}
+.right-bottom-alert{
+  right: 0px;
+  bottom: 0px;
+}
+.left-top-alert{
+  left: 0px;
+  top:0px;
+}
+.left-bottom-alert{
+  left: 0px;
+  bottom:0px;
+}
+.default-size-alert{
+  width: inherit;
+}
+
+.dock-header > div > .alert{
+  margin-bottom: 5px !important;
   animation: intro 3s;
   -webkit-animation: intro 3s;
   -moz-animation: intro 3s;
 }
-
-
-:host >>> .alert {
-  margin-bottom: 0px !important;
-  animation: intro 3s;
-  -webkit-animation: intro 3s;
-  -moz-animation: intro 3s;
-}
-
 
 @keyframes intro {
-  0% {opacity: 0.3;}
-  20% {opacity: 0.7;}
+  0% {opacity: 0.6;}
+  20% {opacity: 0.9;}
   40% {opacity: 1;}
   60% {opacity: 1;}
-  80% {opacity: 0.7;}
-  100% {opacity: 0.3}
+  80% {opacity: 0.9;}
+  100% {opacity: 0.6}
 }
-@keyframes end {
-  0% {opacity: 1;}
-  100% {opacity: 0.3}
-}
-
 
 alert h4 {
   margin-top: 0;
