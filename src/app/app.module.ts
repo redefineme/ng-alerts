@@ -20,7 +20,6 @@ import { NgAlertsService } from "./components/ngAlerts/services/ngAlertsService"
 export function AlertConfig(){
   return new NgAlertsService(
     {
-      type:'success',
       timeout: 3000,
       place:'right-top-alert',
       size:'default'
@@ -38,7 +37,6 @@ export function AlertConfig(){
     AppComponent,
     FullLayoutComponent,
     SimpleLayoutComponent,
-    // AlertsComponents,
     SIDEBAR_TOGGLE_DIRECTIVES
   ],
   providers: [{
