@@ -20,8 +20,6 @@ export class AlertsComponents {
 
 
   addAlert(){
-
-    console.log('add')
     this.ngAlerts.pushAlert({
       msg:this.msg,
       type:this.type,
